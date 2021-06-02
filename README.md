@@ -10,5 +10,6 @@ Libraries Needed:
 >> `ait` - for linux, use `autoit` for windows<br>
 >> `xlrd`<br>
 
-Bulkmessage1.py - Bulk Whatsapp Message sending without attachment
+Bulkmessage1.py - Bulk Whatsapp Message sending without attachment<br>
+
 Bulkmessage2.py - Bulk Whatsapp Message sending with attachment
