@@ -19,7 +19,7 @@ options = Options()
 import xlrd
 
 d = {} # dictionary to store contact details
-rows=5 # no of contact details in excel
+rows=2 # no of contact details in excel
 
 wb = xlrd.open_workbook('numbers.xls')
 sh = wb.sheet_by_index(0)   
@@ -31,15 +31,15 @@ for i in range(rows):
 delay = 30
 
 
-driver = webdriver.Chrome("/home/hashichemnad/Documents/whatsapp/chromedriver", options=options)
+driver = webdriver.Chrome("chromedriver", options=options)
 print('Once your browser opens up sign in to web whatsapp')
 driver.get('https://web.whatsapp.com')
 input("Press ENTER after login into Whatsapp Web and your chats are visiable	.")
 
 for key in d.items():
 	number=str(key[1]);
-  name=key[0];
-	message="Hi "name+"  Welcome";
+	name=key[0];
+	message="Hi "+name+"  Welcome";
   
 	if number == "":
 		continue
@@ -58,7 +58,7 @@ for key in d.items():
 			time.sleep(1)
       
 			ait.press('i', 'm', 'a','g','e')
-      time.sleep(1)
+			time.sleep(1)
 			ait.press('\n')
       
 #     For Windows use below code
@@ -67,10 +67,10 @@ for key in d.items():
 # 		autoit.control_set_text("Open", "Edit1", image_path)
 # 		autoit.control_click("Open", "Button1")
 
-			time.sleep(1)
+			time.sleep(3)
 			whatsapp_send_button = driver.find_element_by_xpath('//*[@id="app"]/div/div/div[2]/div[2]/span/div/span/div/div/div[2]/span/div/div')
 			whatsapp_send_button.click()
-      time.sleep(2)      
+			time.sleep(2)      
             
 		except (UnexpectedAlertPresentException, NoAlertPresentException) as e:
 			print("alert present")
